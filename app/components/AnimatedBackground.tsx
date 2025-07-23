@@ -28,7 +28,6 @@ export default function AnimatedBackground() {
       opacity: number
     }> = []
 
-    // Créer des particules
     for (let i = 0; i < 50; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -43,23 +42,19 @@ export default function AnimatedBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Mise à jour et rendu des particules
       particles.forEach(particle => {
         particle.x += particle.vx
         particle.y += particle.vy
 
-        // Rebond sur les bords
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1
 
-        // Dessiner la particule
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(102, 126, 234, ${particle.opacity})`
         ctx.fill()
       })
 
-      // Dessiner les connexions
       particles.forEach((particle, i) => {
         particles.slice(i + 1).forEach(otherParticle => {
           const distance = Math.sqrt(

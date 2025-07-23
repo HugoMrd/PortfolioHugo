@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -64,7 +63,7 @@ export default function Contact() {
         >
           <h1 className="page-title gradient-text">Contactez-moi</h1>
           <p className="page-subtitle">
-            Une idée de projet ? Une question ? N&apos;hésitez pas à me
+            Une idée de projet ? Une proposition ? N&apos;hésitez pas à me
             contacter !
           </p>
         </motion.div>

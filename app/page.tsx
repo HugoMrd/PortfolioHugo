@@ -31,7 +31,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hero-title"
             >
-              Salut, je suis <span className="gradient-text">Hugo Mouraud</span>
+              Bonjour ! je suis{" "}
+              <span className="gradient-text">Hugo Mouraud</span>
             </motion.h1>
 
             <motion.p
@@ -42,9 +43,11 @@ export default function Home() {
             >
               Développeur Full Stack passionné par les technologies modernes
               <br />
-              et la création d&apos;expériences utilisateur innovantes. Grand amateur de sport,
+              et la création d&apos;expériences utilisateur innovantes. Grand
+              amateur de sport,
               <br />
-              je pratique la musculation quotidiennement et m&apos;intéresse à tout ce qui touche à la performance.
+              je pratique la musculation quotidiennement et m&apos;intéresse à
+              tout ce qui touche à la performance.
             </motion.p>
 
             <motion.div
@@ -83,9 +86,9 @@ export default function Home() {
                   <p>Master 1 IT Management à Dublin (TUD)</p>
                 </div>
                 <div className="tud-logo">
-                  <img 
+                  <img
                     src="https://www.drive0.eu/wp-content/uploads/2019/09/Dublin-Institute-of-Technology-DIT-IE.jpg"
-                    alt="TU Dublin Logo" 
+                    alt="TU Dublin Logo"
                     className="logo-image"
                   />
                 </div>
@@ -97,7 +100,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
               className="hero-skills"
-              >
+            >
               <div className="skills-section">
                 <h4 className="skills-title">Stack technique</h4>
                 <div className="skills-grid">
@@ -123,13 +126,13 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="hero-stats"
-              >
+            >
               <div className="stat-item">
                 <span className="stat-number">4+</span>
                 <span className="stat-label">Années d&apos;expérience</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">10+</span>
+                <span className="stat-number">50+</span>
                 <span className="stat-label">Projets réalisés</span>
               </div>
               <div className="stat-item">
@@ -250,16 +253,19 @@ export default function Home() {
           border-color: rgba(102, 126, 234, 0.4);
         }
 
-        .tud-card, .gympartner-card {
+        .tud-card,
+        .gympartner-card {
           justify-content: space-between;
         }
 
-        .tud-card .highlight-content, .gympartner-card .highlight-content {
+        .tud-card .highlight-content,
+        .gympartner-card .highlight-content {
           text-align: left;
           flex: 1;
         }
 
-        .tud-logo, .gympartner-logo {
+        .tud-logo,
+        .gympartner-logo {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -513,13 +519,15 @@ export default function Home() {
             margin-bottom: 3rem;
           }
 
-          .tud-card, .gympartner-card {
+          .tud-card,
+          .gympartner-card {
             flex-direction: column;
             text-align: center;
             gap: 1.5rem;
           }
 
-          .tud-logo, .gympartner-logo {
+          .tud-logo,
+          .gympartner-logo {
             align-self: center;
           }
 
@@ -571,7 +579,8 @@ export default function Home() {
             gap: 1.5rem;
           }
 
-          .tud-logo, .gympartner-logo {
+          .tud-logo,
+          .gympartner-logo {
             width: 50px;
             height: 50px;
           }

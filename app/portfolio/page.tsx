@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// app/portfolio/page.tsx
 "use client";
 import { motion } from "framer-motion";
 import AnimatedBackground from "../components/AnimatedBackground";
