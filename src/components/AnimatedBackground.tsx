@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -10,7 +10,7 @@ export default function AnimatedBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Set canvas size
@@ -19,7 +19,7 @@ export default function AnimatedBackground() {
       canvas.height = document.documentElement.scrollHeight;
     };
     setCanvasSize();
-    window.addEventListener('resize', setCanvasSize);
+    window.addEventListener("resize", setCanvasSize);
 
     // Particle class
     class Particle {
@@ -31,8 +31,9 @@ export default function AnimatedBackground() {
       opacity: number;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * canvas!.width;
+        this.y = Math.random() * canvas!.height;
+
         this.size = Math.random() * 2 + 1;
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
@@ -44,10 +45,10 @@ export default function AnimatedBackground() {
         this.y += this.speedY;
 
         // Wrap around screen
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        if (this.x > canvas!.width) this.x = 0;
+        if (this.x < 0) this.x = canvas!.width;
+        if (this.y > canvas!.height) this.y = 0;
+        if (this.y < 0) this.y = canvas!.height;
       }
 
       draw() {
@@ -61,7 +62,9 @@ export default function AnimatedBackground() {
 
     // Create particles
     const particlesArray: Particle[] = [];
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000);
+    const numberOfParticles = Math.floor(
+      (canvas.width * canvas.height) / 15000
+    );
 
     for (let i = 0; i < numberOfParticles; i++) {
       particlesArray.push(new Particle());
@@ -86,7 +89,9 @@ export default function AnimatedBackground() {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 150) {
-            ctx.strokeStyle = `rgba(147, 197, 253, ${0.2 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(147, 197, 253, ${
+              0.2 * (1 - distance / 150)
+            })`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -102,7 +107,7 @@ export default function AnimatedBackground() {
     animate();
 
     return () => {
-      window.removeEventListener('resize', setCanvasSize);
+      window.removeEventListener("resize", setCanvasSize);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -120,7 +125,7 @@ export default function AnimatedBackground() {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
           className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"
         />
@@ -133,7 +138,7 @@ export default function AnimatedBackground() {
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
           className="absolute top-1/4 right-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"
         />
@@ -146,7 +151,7 @@ export default function AnimatedBackground() {
           transition={{
             duration: 30,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
           className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"
         />
@@ -159,7 +164,7 @@ export default function AnimatedBackground() {
           transition={{
             duration: 22,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-400/20 rounded-full blur-3xl"
         />
@@ -169,7 +174,7 @@ export default function AnimatedBackground() {
       <canvas
         ref={canvasRef}
         className="fixed inset-0 pointer-events-none z-0"
-        style={{ mixBlendMode: 'screen' }}
+        style={{ mixBlendMode: "screen" }}
       />
     </>
   );
