@@ -81,7 +81,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center gap-2">
-            © {currentYear} Hugo Mouraud. Fait avec <FiHeart className="text-red-500" /> et Next.js
+            © {currentYear} Hugo Mouraud.<FiHeart className="text-red-500" />
           </p>
         </div>
       </div>
